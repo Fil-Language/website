@@ -1,0 +1,2 @@
+error_handling:
+  404: \Archict\Archict\Error\Error404

@@ -1,0 +1,17 @@
+{
+    "name": "fil/website",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Archict\\Archict\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">= 8.2",
+        "archict/core": "^0.3",
+        "archict/router": "^0.3",
+        "guzzlehttp/psr7": "^2.6",
+        "twig/twig": "^3.10"
+    }
+}
