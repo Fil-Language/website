@@ -25,20 +25,50 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Controller;
+namespace Fil\Website\Services;
 
-use Fil\Website\Services\Twig;
-use Archict\Router\RequestHandler;
-use Psr\Http\Message\ServerRequestInterface;
+use LogicException;
+use Twig\Extension\ExtensionInterface;
+use Twig\TwigFunction;
 
-final readonly class HomeController implements RequestHandler
+final class TwigExtension implements ExtensionInterface
 {
-    public function __construct(private Twig $twig)
+    public function getTokenParsers(): array
     {
+        return [];
     }
 
-    public function handle(ServerRequestInterface $request): string
+    public function getNodeVisitors(): array
     {
-        return $this->twig->render('home.html.twig');
+        return [];
+    }
+
+    public function getFilters(): array
+    {
+        return [];
+    }
+
+    public function getTests(): array
+    {
+        return [];
+    }
+
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction(
+                'asset',
+                fn(string $type, string $name) => match ($type) {
+                    'css'          => "/css/$name.css",
+                    'img', 'image' => "/img/$name",
+                    default        => throw new LogicException("Found asset type $type, but this is not handled"),
+                }
+            ),
+        ];
+    }
+
+    public function getOperators(): array
+    {
+        return [];
     }
 }

@@ -39,6 +39,7 @@ final readonly class Twig
     public function __construct()
     {
         $this->twig = new Environment(new FilesystemLoader(__DIR__ . '/../../templates/'));
+        $this->twig->addExtension(new TwigExtension());
     }
 
     public function render(string $template_name, array $context = []): string
