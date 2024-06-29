@@ -25,22 +25,19 @@
 
 declare(strict_types=1);
 
-namespace Archict\Archict;
+namespace Fil\Website;
 
-use Archict\Archict\Controller\HomeController;
-use Archict\Archict\Controller\StatusController;
-use Archict\Archict\Services\StatusService;
-use Archict\Archict\Services\Twig;
 use Archict\Brick\ListeningEvent;
 use Archict\Brick\Service;
 use Archict\Router\Method;
 use Archict\Router\RouteCollectorEvent;
+use Fil\Website\Controller\HomeController;
+use Fil\Website\Services\Twig;
 
 #[Service]
 final readonly class Application
 {
     public function __construct(
-        private StatusService $status_service,
         private Twig $twig,
     ) {
     }
@@ -49,6 +46,5 @@ final readonly class Application
     public function collectRoutes(RouteCollectorEvent $collector): void
     {
         $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute('GET', '/status', new StatusController($this->status_service));
     }
 }

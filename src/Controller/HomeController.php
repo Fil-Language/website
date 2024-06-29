@@ -25,9 +25,9 @@
 
 declare(strict_types=1);
 
-namespace Archict\Archict\Controller;
+namespace Fil\Website\Controller;
 
-use Archict\Archict\Services\Twig;
+use Fil\Website\Services\Twig;
 use Archict\Router\RequestHandler;
 use Psr\Http\Message\ServerRequestInterface;
 
