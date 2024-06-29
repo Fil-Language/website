@@ -1,0 +1,13 @@
+{
+    "name": "@fil/website",
+    "private": true,
+    "scripts": {
+        "build": "sass assets/scss/main.scss public/css/main.css",
+        "watch": "sass --watch assets/scss/main.scss public/css/main.css"
+    },
+    "author": "Kevin Traini",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.77.6"
+    }
+}

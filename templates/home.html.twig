@@ -1,1 +1,43 @@
 {% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="navbar">
+        <div class="navbar-container">
+            <div>
+                <img class="logo" src="{{ asset('img', 'fil.svg') }}" alt="Fil">
+            </div>
+            <div>
+                <a href="#">Install</a>
+                <a href="#">Learn</a>
+                <a href="#">Documentation</a>
+                <a href="https://github.com/Fil-Language"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="home">
+        <section class="title">
+            <div>
+                <h1>Fil</h1>
+                <h3>Create easily what you want</h3>
+            </div>
+        </section>
+
+        <section class="status">
+            <div>
+                <p><i class="fa-solid fa-circle-info"></i> Status</p>
+                <div class="badges">
+                    <img src="https://img.shields.io/badge/Writing_specifications-yellow" alt="Writing specifications">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Fil</h3>
+        <div>
+            <p>Made by <a href="https://ktraini.com">Kevin Traini</a> · All rights reserved</p>
+            <a href="https://github.com/Fil-Language"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+{% endblock %}

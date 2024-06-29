@@ -3,3 +3,5 @@
 vendor
 logs
 cache
+public/css
+node_modules
