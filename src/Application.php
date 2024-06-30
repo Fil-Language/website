@@ -31,6 +31,7 @@ use Archict\Brick\ListeningEvent;
 use Archict\Brick\Service;
 use Archict\Router\Method;
 use Archict\Router\RouteCollectorEvent;
+use Fil\Website\Controller\DocumentationController;
 use Fil\Website\Controller\HomeController;
 use Fil\Website\Services\Twig;
 
@@ -46,5 +47,6 @@ final readonly class Application
     public function collectRoutes(RouteCollectorEvent $collector): void
     {
         $collector->addRoute(Method::GET, '', new HomeController($this->twig));
+        $collector->addRoute(Method::GET, '/documentation', new DocumentationController());
     }
 }
