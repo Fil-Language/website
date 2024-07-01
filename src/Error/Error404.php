@@ -25,9 +25,9 @@
 
 declare(strict_types=1);
 
-namespace Archict\Archict\Error;
+namespace Fil\Website\Error;
 
-use Archict\Archict\Services\Twig;
+use Fil\Website\Services\Twig;
 use Archict\Router\ResponseHandler;
 use GuzzleHttp\Psr7\HttpFactory;
 use Psr\Http\Message\ResponseInterface;

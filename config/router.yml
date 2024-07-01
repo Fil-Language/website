@@ -1,2 +1,2 @@
 error_handling:
-  404: \Archict\Archict\Error\Error404
+  404: \Fil\Website\Error\Error404

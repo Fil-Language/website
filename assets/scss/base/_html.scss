@@ -1,4 +1,3 @@
-<?php
 /**
  * MIT License
  *
@@ -22,25 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+h1 {
+  font-size: 3rem;
+}
 
-declare(strict_types=1);
+h2 {
+  font-size: 2.5rem;
+}
 
-namespace Archict\Archict\Controller;
+h3 {
+  font-size: 2rem;
+}
 
-use Archict\Archict\Services\StatusService;
-use Archict\Router\RequestHandler;
-use Archict\Router\ResponseFactory;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+a {
+  color: $font-color;
+  text-decoration: none;
+  transition: 150ms ease-in-out;
 
-final readonly class StatusController implements RequestHandler
-{
-    public function __construct(private StatusService $status_service)
-    {
-    }
-
-    public function handle(ServerRequestInterface $request): ResponseInterface|string
-    {
-        return ResponseFactory::build()->json($this->status_service->getCurrentStatus())->get();
-    }
+  &:hover {
+    color: $font-color-active;
+  }
 }

@@ -25,28 +25,50 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website;
+namespace Fil\Website\Services;
 
-use Archict\Brick\ListeningEvent;
-use Archict\Brick\Service;
-use Archict\Router\Method;
-use Archict\Router\RouteCollectorEvent;
-use Fil\Website\Controller\DocumentationController;
-use Fil\Website\Controller\HomeController;
-use Fil\Website\Services\Twig;
+use LogicException;
+use Twig\Extension\ExtensionInterface;
+use Twig\TwigFunction;
 
-#[Service]
-final readonly class Application
+final class TwigExtension implements ExtensionInterface
 {
-    public function __construct(
-        private Twig $twig,
-    ) {
+    public function getTokenParsers(): array
+    {
+        return [];
     }
 
-    #[ListeningEvent]
-    public function collectRoutes(RouteCollectorEvent $collector): void
+    public function getNodeVisitors(): array
     {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/doc', new DocumentationController($this->twig));
+        return [];
+    }
+
+    public function getFilters(): array
+    {
+        return [];
+    }
+
+    public function getTests(): array
+    {
+        return [];
+    }
+
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction(
+                'asset',
+                fn(string $type, string $name) => match ($type) {
+                    'css'          => "/css/$name.css",
+                    'img', 'image' => "/img/$name",
+                    default        => throw new LogicException("Found asset type $type, but this is not handled"),
+                }
+            ),
+        ];
+    }
+
+    public function getOperators(): array
+    {
+        return [];
     }
 }

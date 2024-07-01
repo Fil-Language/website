@@ -25,10 +25,10 @@
 
 declare(strict_types=1);
 
-namespace Archict\Archict\Controller;
+namespace Fil\Website\Controller;
 
-use Archict\Archict\Services\Twig;
 use Archict\Router\RequestHandler;
+use Fil\Website\Services\Twig;
 use Psr\Http\Message\ServerRequestInterface;
 
 final readonly class HomeController implements RequestHandler
@@ -39,18 +39,6 @@ final readonly class HomeController implements RequestHandler
 
     public function handle(ServerRequestInterface $request): string
     {
-        $backgrounds = [
-            'linear-gradient(to right, #f0c27b, #4b1248)',
-            'linear-gradient(to right, #ff4e50, #f9d423)',
-            'linear-gradient(to right, #add100, #7b920a)',
-            'linear-gradient(to right, #fbd3e9, #bb377d)',
-        ];
-
-        return $this->twig->render(
-            'home.html.twig',
-            [
-                'background' => $backgrounds[random_int(0, count($backgrounds) - 1)],
-            ]
-        );
+        return $this->twig->render('home.html.twig');
     }
 }

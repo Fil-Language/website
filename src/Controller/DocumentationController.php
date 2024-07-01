@@ -25,28 +25,20 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website;
+namespace Fil\Website\Controller;
 
-use Archict\Brick\ListeningEvent;
-use Archict\Brick\Service;
-use Archict\Router\Method;
-use Archict\Router\RouteCollectorEvent;
-use Fil\Website\Controller\DocumentationController;
-use Fil\Website\Controller\HomeController;
+use Archict\Router\RequestHandler;
 use Fil\Website\Services\Twig;
+use Psr\Http\Message\ServerRequestInterface;
 
-#[Service]
-final readonly class Application
+final readonly class DocumentationController implements RequestHandler
 {
-    public function __construct(
-        private Twig $twig,
-    ) {
+    public function __construct(private Twig $twig)
+    {
     }
 
-    #[ListeningEvent]
-    public function collectRoutes(RouteCollectorEvent $collector): void
+    public function handle(ServerRequestInterface $request): string
     {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/doc', new DocumentationController($this->twig));
+        return $this->twig->render('documentation.html.twig');
     }
 }

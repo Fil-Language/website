@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fil {% block title %}{% endblock %}</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Fil language official website"/>
+    <meta name="keywords" content="Fil, language, programmation, tool"/>
+    <meta name="author" content="Kevin Traini"/>
+    <meta name="application-name" content="Fil">
+    <meta name="generator" content="Archict with Twig">
+
+    <meta property="og:title" content="Fil">
+    <meta property="og:description" content="Fil language official website">
+    <meta property="og:image" content="{{ asset('img', 'fil.svg') }}">
+
+    <link rel="shortcut icon" href="{{ asset('img', 'fil.svg') }}"/>
+    <link rel="stylesheet" href="{{ asset('css', 'main') }}"/>
+    <script src="https://kit.fontawesome.com/fdc86ed409.js" crossorigin="anonymous"></script>
+    <script defer src="/script.js" data-website-id="84059d06-1261-44f6-a991-747989649947"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>

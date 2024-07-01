@@ -1,4 +1,3 @@
-<?php
 /**
  * MIT License
  *
@@ -22,33 +21,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
-declare(strict_types=1);
-
-namespace Archict\Archict\Services;
-
-use Archict\Brick\Service;
-
-#[Service]
-final class StatusService
-{
-    public function getCurrentStatus(): array
-    {
-        return [
-            'status'       => 'OK',
-            'memory_usage' => $this->getMemoryUsage(),
-        ];
-    }
-
-    private function getMemoryUsage(): string
-    {
-
-        $free     = shell_exec('free');
-        $free     = trim($free);
-        $free_arr = explode("\n", $free);
-        $mem      = explode(" ", $free_arr[1]);
-        $mem      = array_filter($mem);
-        $mem      = array_merge($mem);
-        return sprintf('%.2f%%', $mem[2] / $mem[1] * 100);
-    }
+body {
+  background-color: $background;
+  color: $font-color;
 }
