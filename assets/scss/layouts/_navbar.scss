@@ -53,3 +53,15 @@
     line-height: 1.5rem;
   }
 }
+
+@media(max-width: 900px) {
+  .navbar {
+    .navbar-container {
+      justify-content: left;
+    }
+
+    a:has(> .logo) {
+      display: none;
+    }
+  }
+}
