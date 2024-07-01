@@ -30,7 +30,7 @@ footer {
   justify-content: center;
   align-items: center;
 
-  h3,div {
+  h3, div {
     max-width: 72rem;
     width: 100%;
     padding: 3rem;
@@ -47,13 +47,6 @@ footer {
   }
 
   a {
-    color: $font-color;
-    text-decoration: none;
     font-size: 1.2rem;
-    transition: 150ms ease-in-out;
-
-    &:hover {
-      color: $font-color-active;
-    }
   }
 }

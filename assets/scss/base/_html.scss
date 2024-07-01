@@ -21,31 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-.err_404 {
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+a {
   color: $font-color;
-  text-align: center;
+  text-decoration: none;
+  transition: 150ms ease-in-out;
 
-  h1 {
-    font-size: 4rem;
-  }
-
-  p {
-    font-size: 2rem;
-  }
-
-  a {
-    font-size: 1.9rem;
-    text-decoration: none;
-    color: $font-color;
-    transition: 150ms ease-in-out;
-
-    &:hover {
-      color: $font-color-active;
-    }
+  &:hover {
+    color: $font-color-active;
   }
 }

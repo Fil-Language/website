@@ -39,13 +39,6 @@ final readonly class HomeController implements RequestHandler
 
     public function handle(ServerRequestInterface $request): string
     {
-        return $this->twig->render(
-            'home.html.twig',
-            [
-                'install_url' => DocumentationController::pathToFile('getting-started'),
-                'learn_url'   => DocumentationController::pathToFile('learn'),
-                'doc_url'     => DocumentationController::pathToFile(''),
-            ]
-        );
+        return $this->twig->render('home.html.twig');
     }
 }

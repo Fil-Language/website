@@ -28,23 +28,17 @@ declare(strict_types=1);
 namespace Fil\Website\Controller;
 
 use Archict\Router\RequestHandler;
+use Fil\Website\Services\Twig;
 use Psr\Http\Message\ServerRequestInterface;
 
-final class DocumentationController implements RequestHandler
+final readonly class DocumentationController implements RequestHandler
 {
-    private const QUERY_NAME = 'file';
+    public function __construct(private Twig $twig)
+    {
+    }
 
     public function handle(ServerRequestInterface $request): string
     {
-        return 'Documentation: ' . ($request->getQueryParams()[self::QUERY_NAME] ?? '/');
-    }
-
-    public static function pathToFile(string $file): string
-    {
-        if ($file === '') {
-            return '/documentation';
-        }
-
-        return '/documentation?' . http_build_query([self::QUERY_NAME => $file]);
+        return $this->twig->render('documentation.html.twig');
     }
 }
