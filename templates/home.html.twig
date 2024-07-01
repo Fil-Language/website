@@ -1,19 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <header class="navbar">
-        <div class="navbar-container">
-            <div>
-                <img class="logo" src="{{ asset('img', 'fil.svg') }}" alt="Fil">
-            </div>
-            <div>
-                <a href="{{ install_url }}">Install</a>
-                <a href="{{ learn_url }}">Learn</a>
-                <a href="{{ doc_url }}">Documentation</a>
-                <a href="https://github.com/Fil-Language"><i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>
-    </header>
+    {% include('navbar.html.twig') %}
 
     <main class="home">
         <section class="title">
@@ -33,11 +21,5 @@
         </section>
     </main>
 
-    <footer>
-        <h3>Fil</h3>
-        <div>
-            <p>Made by <a href="https://ktraini.com">Kevin Traini</a> · All rights reserved</p>
-            <a href="https://github.com/Fil-Language"><i class="fa-brands fa-github"></i></a>
-        </div>
-    </footer>
+    {% include('footer.html.twig') %}
 {% endblock %}
