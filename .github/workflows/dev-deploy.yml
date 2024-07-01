@@ -29,6 +29,10 @@ jobs:
           pnpm i
           pnpm build
 
+      - name: Prod mod
+        run: |
+          mv .env.prod .env
+
       - name: Exports files
         uses: appleboy/scp-action@v0.1.7
         with:
