@@ -25,30 +25,18 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website;
+namespace Fil\Website\Controller;
 
-use Archict\Brick\ListeningEvent;
-use Archict\Brick\Service;
-use Archict\Router\Method;
-use Archict\Router\RouteCollectorEvent;
-use Fil\Website\Controller\DocumentationController;
-use Fil\Website\Controller\FDRController;
-use Fil\Website\Controller\HomeController;
-use Fil\Website\Services\Twig;
-
-#[Service]
-final readonly class Application
+final readonly class FDRPresenter
 {
-    public function __construct(
-        private Twig $twig,
+    private function __construct(
+        public string $name,
+        public string $link,
     ) {
     }
 
-    #[ListeningEvent]
-    public function collectRoutes(RouteCollectorEvent $collector): void
+    public static function fromName(string $name): self
     {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/doc', new DocumentationController($this->twig));
-        $collector->addRoute(Method::GET, '/FDR[/{title}]', new FDRController($this->twig));
+        return new self($name, "/FDR/$name");
     }
 }
