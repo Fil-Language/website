@@ -29,6 +29,7 @@ namespace Fil\Website\Services;
 
 use LogicException;
 use Twig\Extension\ExtensionInterface;
+use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 final class TwigExtension implements ExtensionInterface
@@ -45,7 +46,12 @@ final class TwigExtension implements ExtensionInterface
 
     public function getFilters(): array
     {
-        return [];
+        return [
+            new TwigFilter(
+                'markdown',
+                static fn(string $content) => $content, // TODO: parse markdown
+            ),
+        ];
     }
 
     public function getTests(): array
@@ -58,7 +64,7 @@ final class TwigExtension implements ExtensionInterface
         return [
             new TwigFunction(
                 'asset',
-                fn(string $type, string $name) => match ($type) {
+                static fn(string $type, string $name) => match ($type) {
                     'css'          => "/css/$name.css",
                     'img', 'image' => "/img/$name",
                     default        => throw new LogicException("Found asset type $type, but this is not handled"),

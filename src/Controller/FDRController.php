@@ -27,9 +27,14 @@ declare(strict_types=1);
 
 namespace Fil\Website\Controller;
 
+use Archict\Router\Exception\HTTP\HTTPException;
+use Archict\Router\HTTPExceptionFactory;
 use Archict\Router\RequestHandler;
 use Fil\Website\Services\Twig;
 use Psr\Http\Message\ServerRequestInterface;
+use function Psl\Filesystem\exists;
+use function Psl\Filesystem\is_file;
+use function Psl\File\read;
 
 final readonly class FDRController implements RequestHandler
 {
@@ -37,10 +42,38 @@ final readonly class FDRController implements RequestHandler
     {
     }
 
+    /**
+     * @throws HTTPException
+     */
     public function handle(ServerRequestInterface $request): string
     {
+        $request_file = $request->getAttribute('title');
+        if ($request_file === null) {
+            return $this->twig->render('fdr-list.html.twig', [
+                'records' => [
+                    FDRPresenter::fromName('000 - Introduction to FDR'),
+                ],
+            ]);
+        }
+
+        $file = $this->toFDRPath(urldecode($request_file));
+        if (exists($file) && is_file($file)) {
+            $content = read($file);
+        } else {
+            throw HTTPExceptionFactory::NotFound();
+        }
+
         return $this->twig->render('fdr.html.twig', [
-            'records' => []
+            'title'   => urldecode($request_file),
+            'content' => $content,
         ]);
+    }
+
+    /**
+     * @psalm-pure
+     */
+    private function toFDRPath(string $request_file): string
+    {
+        return __DIR__ . "/../../public/fdr/$request_file.md";
     }
 }
