@@ -29,7 +29,11 @@ namespace Fil\Website\Services;
 
 use Archict\Brick\Service;
 use Twig\Environment;
+use Twig\Extra\Markdown\DefaultMarkdown;
+use Twig\Extra\Markdown\MarkdownExtension;
+use Twig\Extra\Markdown\MarkdownRuntime;
 use Twig\Loader\FilesystemLoader;
+use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
 #[Service]
 final readonly class Twig
@@ -40,6 +44,17 @@ final readonly class Twig
     {
         $this->twig = new Environment(new FilesystemLoader(__DIR__ . '/../../templates/'));
         $this->twig->addExtension(new TwigExtension());
+        $this->twig->addExtension(new MarkdownExtension());
+        $this->twig->addRuntimeLoader(new class implements RuntimeLoaderInterface {
+            public function load(string $class): ?MarkdownRuntime
+            {
+                if ($class === MarkdownRuntime::class) {
+                    return new MarkdownRuntime(new DefaultMarkdown());
+                }
+
+                return null;
+            }
+        });
     }
 
     public function render(string $template_name, array $context = []): string

@@ -46,12 +46,7 @@ final class TwigExtension implements ExtensionInterface
 
     public function getFilters(): array
     {
-        return [
-            new TwigFilter(
-                'markdown',
-                static fn(string $content) => $content, // TODO: parse markdown
-            ),
-        ];
+        return [];
     }
 
     public function getTests(): array

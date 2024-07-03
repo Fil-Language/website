@@ -32,9 +32,9 @@ use Archict\Router\HTTPExceptionFactory;
 use Archict\Router\RequestHandler;
 use Fil\Website\Services\Twig;
 use Psr\Http\Message\ServerRequestInterface;
+use function Psl\File\read;
 use function Psl\Filesystem\exists;
 use function Psl\Filesystem\is_file;
-use function Psl\File\read;
 
 final readonly class FDRController implements RequestHandler
 {
@@ -66,6 +66,7 @@ final readonly class FDRController implements RequestHandler
         return $this->twig->render('fdr.html.twig', [
             'title'   => urldecode($request_file),
             'content' => $content,
+            'file'    => $this->toFDRDownloadLink(urldecode($request_file)),
         ]);
     }
 
@@ -75,5 +76,10 @@ final readonly class FDRController implements RequestHandler
     private function toFDRPath(string $request_file): string
     {
         return __DIR__ . "/../../public/fdr/$request_file.md";
+    }
+
+    private function toFDRDownloadLink(string $request_file): string
+    {
+        return "/fdr/$request_file.md";
     }
 }

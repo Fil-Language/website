@@ -8,7 +8,13 @@
     <main class="content-container">
         <section class="content-wrapper">
             <div class="content">
-                {{ content | markdown }}
+                {{ content | markdown_to_html }}
+            </div>
+        </section>
+
+        <section class="content-wrapper">
+            <div class="content center">
+                <a href="{{ file }}" class="button"><i class="fa-solid fa-download"></i> Download</a>
             </div>
         </section>
     </main>
