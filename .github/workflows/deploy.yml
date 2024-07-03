@@ -44,3 +44,11 @@ jobs:
           source: .
           target: ~/www/Fil
           rm: true
+
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: chmod -R 777 ~/www/Fil/cache
