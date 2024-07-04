@@ -32,6 +32,7 @@ use Archict\Brick\Service;
 use Archict\Router\Method;
 use Archict\Router\RouteCollectorEvent;
 use Fil\Website\Controller\DocumentationController;
+use Fil\Website\Controller\FDRController;
 use Fil\Website\Controller\HomeController;
 use Fil\Website\Services\Twig;
 
@@ -48,5 +49,6 @@ final readonly class Application
     {
         $collector->addRoute(Method::GET, '', new HomeController($this->twig));
         $collector->addRoute(Method::GET, '/doc', new DocumentationController($this->twig));
+        $collector->addRoute(Method::GET, '/FDR[/{title}]', new FDRController($this->twig));
     }
 }

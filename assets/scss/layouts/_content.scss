@@ -35,7 +35,7 @@
 
     > .content {
       max-width: 50rem;
-      width: 100%;
+      width: fit-content;
 
       &.center {
         display: flex;
@@ -45,5 +45,11 @@
         gap: 0.5rem;
       }
     }
+  }
+}
+
+@media(max-width: 900px) {
+  .content {
+    padding: 0 1rem;
   }
 }

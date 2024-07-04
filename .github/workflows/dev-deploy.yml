@@ -2,6 +2,9 @@ name: Deploy website for test
 
 on:
   push:
+    branches:
+      - '**'
+      - '!master'
 
 jobs:
   deploy:
@@ -42,3 +45,11 @@ jobs:
           source: .
           target: ~/www/dev
           rm: true
+
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: chmod -R 777 ~/www/dev/cache

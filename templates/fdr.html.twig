@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}| FDR {{ title }}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+{% endblock %}
+
+{% block body %}
+    {% include('navbar.html.twig') %}
+
+    <main class="content-container">
+        <section class="content-wrapper">
+            <div class="content fdr">
+                {{ content | markdown_to_html }}
+            </div>
+        </section>
+
+        <section class="content-wrapper">
+            <div class="content center">
+                <a href="{{ file }}" class="button"><i class="fa-solid fa-download"></i> Download</a>
+            </div>
+        </section>
+    </main>
+
+    {% include('footer.html.twig') %}
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript">hljs.highlightAll();</script>
+{% endblock %}

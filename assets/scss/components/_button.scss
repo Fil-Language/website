@@ -21,8 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-@import "navbar";
-@import "content";
-@import "footer";
-@import "home";
-@import "fdr";
+.button {
+  background-color: $background-secondary;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    background-color: lighten($background-secondary, 10%);
+  }
+}

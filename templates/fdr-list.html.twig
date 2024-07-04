@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}| FDR{% endblock %}
+
+{% block body %}
+    {% include('navbar.html.twig') %}
+
+    <main class="content-container">
+        <section class="content-wrapper">
+            <div class="content fdr-list">
+                <h1>FDRs</h1>
+                {% if records is empty %}
+                    <p>Nothing to show</p>
+                {% else %}
+                    <div>
+                        {% for fdr in records %}
+                            <p><a href="{{ fdr.link }}">{{ fdr.name }}</a></p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    {% include('footer.html.twig') %}
+{% endblock %}

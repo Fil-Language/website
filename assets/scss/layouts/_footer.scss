@@ -53,13 +53,23 @@ footer {
 
 @media(max-width: 900px) {
   footer {
+    align-items: start;
+
     h3, div {
+      margin: 0 1rem;
       padding: 3rem 0;
+      width: auto;
     }
 
     div {
       flex-direction: column;
       gap: 0.5rem;
     }
+  }
+}
+
+@media print {
+  footer {
+    display: none;
   }
 }

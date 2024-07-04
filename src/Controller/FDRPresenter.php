@@ -1,3 +1,4 @@
+<?php
 /**
  * MIT License
  *
@@ -21,8 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-@import "navbar";
-@import "content";
-@import "footer";
-@import "home";
-@import "fdr";
+
+declare(strict_types=1);
+
+namespace Fil\Website\Controller;
+
+final readonly class FDRPresenter
+{
+    private function __construct(
+        public string $name,
+        public string $link,
+    ) {
+    }
+
+    public static function fromName(string $name): self
+    {
+        return new self($name, "/FDR/$name");
+    }
+}
