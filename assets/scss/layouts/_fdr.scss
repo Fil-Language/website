@@ -26,3 +26,92 @@
     font-size: 1.3rem;
   }
 }
+
+.fdr {
+  h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  blockquote {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background-color: $background-secondary;
+    border-left: 3px solid lighten($background-secondary, 10%);
+    border-radius: 5px;
+  }
+
+  li {
+    margin-left: 1.2rem;
+  }
+
+  pre {
+    margin: 0.5rem 0;
+
+    code.hljs {
+      border-radius: 5px;
+    }
+
+    code * {
+      font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace;
+    }
+  }
+
+  table {
+    margin: 0.5rem 0;
+    border-spacing: 0;
+
+    tr {
+      min-height: 32px;
+      height: 32px;
+      transition: 150ms ease-in-out;
+    }
+
+    th, td {
+      padding: 0 0.5rem;
+    }
+
+    th:nth-child(n+2), td:nth-child(n+2) {
+      border-left: 1px solid lighten($background-secondary, 20%);
+    }
+
+    th {
+      font-weight: 700;
+      border-bottom: 2px solid lighten($background-secondary, 20%);
+    }
+
+    tr:nth-child(odd) {
+      background-color: $background-secondary;
+    }
+
+    tr:nth-child(even) {
+      background-color: lighten($background-secondary, 10%);
+    }
+
+    tbody > tr:hover {
+      background-color: lighten($background-secondary, 15%);
+    }
+  }
+}

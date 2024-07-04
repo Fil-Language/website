@@ -15,6 +15,6 @@
         "twig/twig": "^3.10",
         "azjezz/psl": "^2.9",
         "twig/markdown-extra": "^3.10",
-        "league/commonmark": "^2.4"
+        "erusev/parsedown": "^1.7"
     }
 }
