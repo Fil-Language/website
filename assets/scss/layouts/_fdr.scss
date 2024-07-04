@@ -37,6 +37,16 @@
   p {
     font-size: 1.1rem;
     padding: 0.5rem 0;
+    text-align: justify;
+    line-height: 1.2em;
+
+    code {
+      font-family: $mono-font;
+      font-size: inherit;
+      background-color: $background-secondary;
+      padding: 0 0.2rem;
+      border-radius: 5px;
+    }
   }
 
   strong {
@@ -72,10 +82,11 @@
 
     code.hljs {
       border-radius: 5px;
+      font-family: $mono-font;
     }
 
     code * {
-      font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace;
+      font-family: $mono-font;
     }
   }
 
