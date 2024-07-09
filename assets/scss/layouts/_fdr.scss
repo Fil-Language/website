@@ -32,11 +32,18 @@
     font-weight: 700;
     padding-top: 1rem;
     padding-bottom: 0.75rem;
+
+    code {
+      font-family: $mono-font;
+      font-size: inherit;
+      background-color: $background-secondary;
+      padding: 0 0.2rem;
+      border-radius: 5px;
+    }
   }
 
-  p {
+  p, li {
     font-size: 1.1rem;
-    padding: 0.5rem 0;
     text-align: justify;
     line-height: 1.2em;
 
@@ -49,8 +56,12 @@
     }
   }
 
+  p {
+    padding: 0.5rem 0;
+  }
+
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   em {
@@ -123,6 +134,14 @@
 
     tbody > tr:hover {
       background-color: lighten($background-secondary, 15%);
+    }
+
+    code {
+      font-family: $mono-font;
+      font-size: inherit;
+      background-color: $background-secondary;
+      padding: 0 0.2rem;
+      border-radius: 5px;
     }
   }
 }
