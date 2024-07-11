@@ -52,6 +52,7 @@ final readonly class FDRController implements RequestHandler
             return $this->twig->render('fdr-list.html.twig', [
                 'records' => [
                     FDRPresenter::fromName('000 - Introduction to FDR'),
+                    FDRPresenter::fromName('001 - Fil'),
                 ],
             ]);
         }
