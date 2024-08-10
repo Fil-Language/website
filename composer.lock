@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be0a2668f1e6a6bd78ad0c13eb50eb39",
+    "content-hash": "67dcbe80e0deb9fd01c6668787334ad2",
     "packages": [
         {
             "name": "archict/brick",
-            "version": "v0.2.0",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archict/brick.git",
-                "reference": "442e7230807bd55f1cd0ef8abf1b36272967ec77"
+                "reference": "7fae635f9af442cf3c1a78494cb7cc7436cd5764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archict/brick/zipball/442e7230807bd55f1cd0ef8abf1b36272967ec77",
-                "reference": "442e7230807bd55f1cd0ef8abf1b36272967ec77",
+                "url": "https://api.github.com/repos/Archict/brick/zipball/7fae635f9af442cf3c1a78494cb7cc7436cd5764",
+                "reference": "7fae635f9af442cf3c1a78494cb7cc7436cd5764",
                 "shasum": ""
             },
             "require": {
@@ -42,26 +42,26 @@
             "description": "Base library for Archict framework",
             "support": {
                 "issues": "https://github.com/Archict/brick/issues",
-                "source": "https://github.com/Archict/brick/tree/v0.2.0"
+                "source": "https://github.com/Archict/brick/tree/v1.0.0"
             },
-            "time": "2024-04-18T16:07:42+00:00"
+            "time": "2024-07-10T15:56:56+00:00"
         },
         {
             "name": "archict/core",
-            "version": "v0.3.1",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archict/core.git",
-                "reference": "6a7ab537c43df994de363c4622b25ef541ab7b82"
+                "reference": "bdaa4cb313cb5985e9bd64aba1e5cd066ba8b95d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archict/core/zipball/6a7ab537c43df994de363c4622b25ef541ab7b82",
-                "reference": "6a7ab537c43df994de363c4622b25ef541ab7b82",
+                "url": "https://api.github.com/repos/Archict/core/zipball/bdaa4cb313cb5985e9bd64aba1e5cd066ba8b95d",
+                "reference": "bdaa4cb313cb5985e9bd64aba1e5cd066ba8b95d",
                 "shasum": ""
             },
             "require": {
-                "archict/brick": "^0",
+                "archict/brick": "^1.0",
                 "azjezz/psl": "^2.9",
                 "composer-runtime-api": "^2.2",
                 "composer/class-map-generator": "^1.3",
@@ -91,27 +91,27 @@
             "description": "Heart of Archict, this library load and manage Bricks",
             "support": {
                 "issues": "https://github.com/Archict/core/issues",
-                "source": "https://github.com/Archict/core/tree/v0.3.1"
+                "source": "https://github.com/Archict/core/tree/v1.0.0"
             },
-            "time": "2024-06-07T16:01:21+00:00"
+            "time": "2024-07-10T16:04:52+00:00"
         },
         {
             "name": "archict/router",
-            "version": "v0.3.2",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archict/router.git",
-                "reference": "eef62cde1cb75e7db4624f1704f93313f00283ce"
+                "reference": "5e90e2386326c794df1b743cdaff62609d4c1781"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archict/router/zipball/eef62cde1cb75e7db4624f1704f93313f00283ce",
-                "reference": "eef62cde1cb75e7db4624f1704f93313f00283ce",
+                "url": "https://api.github.com/repos/Archict/router/zipball/5e90e2386326c794df1b743cdaff62609d4c1781",
+                "reference": "5e90e2386326c794df1b743cdaff62609d4c1781",
                 "shasum": ""
             },
             "require": {
-                "archict/brick": "^0",
-                "archict/core": "^0.3",
+                "archict/brick": "^1.0",
+                "archict/core": "^1.0",
                 "cuyz/valinor": "^1.12",
                 "ext-simplexml": "*",
                 "guzzlehttp/psr7": "^2.6",
@@ -138,9 +138,9 @@
             "description": "Simple HTTP router",
             "support": {
                 "issues": "https://github.com/Archict/router/issues",
-                "source": "https://github.com/Archict/router/tree/v0.3.2"
+                "source": "https://github.com/Archict/router/tree/v1.0.0"
             },
-            "time": "2024-07-03T17:37:05+00:00"
+            "time": "2024-07-10T16:09:03+00:00"
         },
         {
             "name": "azjezz/psl",
@@ -218,16 +218,16 @@
         },
         {
             "name": "composer/class-map-generator",
-            "version": "1.3.2",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/class-map-generator.git",
-                "reference": "acd227952154850d0bb7d65caa4f9edf9cd806a7"
+                "reference": "b1b3fd0b4eaf3ddf3ee230bc340bf3fff454a1a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/acd227952154850d0bb7d65caa4f9edf9cd806a7",
-                "reference": "acd227952154850d0bb7d65caa4f9edf9cd806a7",
+                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/b1b3fd0b4eaf3ddf3ee230bc340bf3fff454a1a3",
+                "reference": "b1b3fd0b4eaf3ddf3ee230bc340bf3fff454a1a3",
                 "shasum": ""
             },
             "require": {
@@ -271,7 +271,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/class-map-generator/issues",
-                "source": "https://github.com/composer/class-map-generator/tree/1.3.2"
+                "source": "https://github.com/composer/class-map-generator/tree/1.3.4"
             },
             "funding": [
                 {
@@ -287,34 +287,42 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T19:45:56+00:00"
+            "time": "2024-06-12T14:13:04+00:00"
         },
         {
             "name": "composer/pcre",
-            "version": "3.1.4",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/pcre.git",
-                "reference": "04229f163664973f68f38f6f73d917799168ef24"
+                "reference": "ea4ab6f9580a4fd221e0418f2c357cdd39102a90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/04229f163664973f68f38f6f73d917799168ef24",
-                "reference": "04229f163664973f68f38f6f73d917799168ef24",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/ea4ab6f9580a4fd221e0418f2c357cdd39102a90",
+                "reference": "ea4ab6f9580a4fd221e0418f2c357cdd39102a90",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0"
             },
+            "conflict": {
+                "phpstan/phpstan": "<1.11.8"
+            },
             "require-dev": {
-                "phpstan/phpstan": "^1.3",
+                "phpstan/phpstan": "^1.11.8",
                 "phpstan/phpstan-strict-rules": "^1.1",
-                "symfony/phpunit-bridge": "^5"
+                "phpunit/phpunit": "^8 || ^9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-main": "3.x-dev"
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
                 }
             },
             "autoload": {
@@ -342,7 +350,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/pcre/issues",
-                "source": "https://github.com/composer/pcre/tree/3.1.4"
+                "source": "https://github.com/composer/pcre/tree/3.2.0"
             },
             "funding": [
                 {
@@ -358,7 +366,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-27T13:40:54+00:00"
+            "time": "2024-07-25T09:36:02+00:00"
         },
         {
             "name": "cuyz/valinor",
@@ -485,24 +493,24 @@
         },
         {
             "name": "graham-campbell/result-type",
-            "version": "v1.1.2",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "fbd48bce38f73f8a4ec8583362e732e4095e5862"
+                "reference": "3ba905c11371512af9d9bdd27d99b782216b6945"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/fbd48bce38f73f8a4ec8583362e732e4095e5862",
-                "reference": "fbd48bce38f73f8a4ec8583362e732e4095e5862",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/3ba905c11371512af9d9bdd27d99b782216b6945",
+                "reference": "3ba905c11371512af9d9bdd27d99b782216b6945",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
-                "phpoption/phpoption": "^1.9.2"
+                "phpoption/phpoption": "^1.9.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5.34 || ^9.6.13 || ^10.4.2"
+                "phpunit/phpunit": "^8.5.39 || ^9.6.20 || ^10.5.28"
             },
             "type": "library",
             "autoload": {
@@ -531,7 +539,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.2"
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.3"
             },
             "funding": [
                 {
@@ -543,7 +551,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-12T22:16:48+00:00"
+            "time": "2024-07-20T21:45:45+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -663,16 +671,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.9.2",
+            "version": "1.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "80735db690fe4fc5c76dfa7f9b770634285fa820"
+                "reference": "e3fac8b24f56113f7cb96af14958c0dd16330f54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/80735db690fe4fc5c76dfa7f9b770634285fa820",
-                "reference": "80735db690fe4fc5c76dfa7f9b770634285fa820",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/e3fac8b24f56113f7cb96af14958c0dd16330f54",
+                "reference": "e3fac8b24f56113f7cb96af14958c0dd16330f54",
                 "shasum": ""
             },
             "require": {
@@ -680,13 +688,13 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
-                "phpunit/phpunit": "^8.5.34 || ^9.6.13 || ^10.4.2"
+                "phpunit/phpunit": "^8.5.39 || ^9.6.20 || ^10.5.28"
             },
             "type": "library",
             "extra": {
                 "bamarni-bin": {
                     "bin-links": true,
-                    "forward-command": true
+                    "forward-command": false
                 },
                 "branch-alias": {
                     "dev-master": "1.9-dev"
@@ -722,7 +730,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.9.2"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.3"
             },
             "funding": [
                 {
@@ -734,7 +742,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-12T21:59:55+00:00"
+            "time": "2024-07-20T21:41:07+00:00"
         },
         {
             "name": "psr/http-factory",
@@ -1080,16 +1088,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v7.1.1",
+            "version": "v7.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "fbb0ba67688b780efbc886c1a0a0948dcf7205d6"
+                "reference": "717c6329886f32dc65e27461f80f2a465412fdca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/fbb0ba67688b780efbc886c1a0a0948dcf7205d6",
-                "reference": "fbb0ba67688b780efbc886c1a0a0948dcf7205d6",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/717c6329886f32dc65e27461f80f2a465412fdca",
+                "reference": "717c6329886f32dc65e27461f80f2a465412fdca",
                 "shasum": ""
             },
             "require": {
@@ -1124,7 +1132,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v7.1.1"
+                "source": "https://github.com/symfony/finder/tree/v7.1.3"
             },
             "funding": [
                 {
@@ -1140,7 +1148,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T14:57:53+00:00"
+            "time": "2024-07-24T07:08:44+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1605,23 +1613,23 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.6.0",
+            "version": "v5.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4"
+                "reference": "a59a13791077fe3d44f90e7133eb68e7d22eaff2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4",
-                "reference": "2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/a59a13791077fe3d44f90e7133eb68e7d22eaff2",
+                "reference": "a59a13791077fe3d44f90e7133eb68e7d22eaff2",
                 "shasum": ""
             },
             "require": {
                 "ext-pcre": "*",
-                "graham-campbell/result-type": "^1.1.2",
+                "graham-campbell/result-type": "^1.1.3",
                 "php": "^7.2.5 || ^8.0",
-                "phpoption/phpoption": "^1.9.2",
+                "phpoption/phpoption": "^1.9.3",
                 "symfony/polyfill-ctype": "^1.24",
                 "symfony/polyfill-mbstring": "^1.24",
                 "symfony/polyfill-php80": "^1.24"
@@ -1638,7 +1646,7 @@
             "extra": {
                 "bamarni-bin": {
                     "bin-links": true,
-                    "forward-command": true
+                    "forward-command": false
                 },
                 "branch-alias": {
                     "dev-master": "5.6-dev"
@@ -1673,7 +1681,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.0"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.1"
             },
             "funding": [
                 {
@@ -1685,7 +1693,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-12T22:43:29+00:00"
+            "time": "2024-07-20T21:52:34+00:00"
         }
     ],
     "packages-dev": [],
