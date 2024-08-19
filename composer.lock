@@ -48,16 +48,16 @@
         },
         {
             "name": "archict/core",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archict/core.git",
-                "reference": "bdaa4cb313cb5985e9bd64aba1e5cd066ba8b95d"
+                "reference": "a4256043625ef4c2e75a212aceacd40dab47d546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archict/core/zipball/bdaa4cb313cb5985e9bd64aba1e5cd066ba8b95d",
-                "reference": "bdaa4cb313cb5985e9bd64aba1e5cd066ba8b95d",
+                "url": "https://api.github.com/repos/Archict/core/zipball/a4256043625ef4c2e75a212aceacd40dab47d546",
+                "reference": "a4256043625ef4c2e75a212aceacd40dab47d546",
                 "shasum": ""
             },
             "require": {
@@ -91,22 +91,22 @@
             "description": "Heart of Archict, this library load and manage Bricks",
             "support": {
                 "issues": "https://github.com/Archict/core/issues",
-                "source": "https://github.com/Archict/core/tree/v1.0.0"
+                "source": "https://github.com/Archict/core/tree/v1.0.1"
             },
-            "time": "2024-07-10T16:04:52+00:00"
+            "time": "2024-08-17T09:01:04+00:00"
         },
         {
             "name": "archict/router",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archict/router.git",
-                "reference": "5e90e2386326c794df1b743cdaff62609d4c1781"
+                "reference": "e690829ec9a4b5de482ab4b4a833c8d2d7b6a3af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archict/router/zipball/5e90e2386326c794df1b743cdaff62609d4c1781",
-                "reference": "5e90e2386326c794df1b743cdaff62609d4c1781",
+                "url": "https://api.github.com/repos/Archict/router/zipball/e690829ec9a4b5de482ab4b4a833c8d2d7b6a3af",
+                "reference": "e690829ec9a4b5de482ab4b4a833c8d2d7b6a3af",
                 "shasum": ""
             },
             "require": {
@@ -138,9 +138,9 @@
             "description": "Simple HTTP router",
             "support": {
                 "issues": "https://github.com/Archict/router/issues",
-                "source": "https://github.com/Archict/router/tree/v1.0.0"
+                "source": "https://github.com/Archict/router/tree/v1.0.1"
             },
-            "time": "2024-07-10T16:09:03+00:00"
+            "time": "2024-08-17T08:58:46+00:00"
         },
         {
             "name": "azjezz/psl",
