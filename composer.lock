@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "archict/brick",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archict/brick.git",
-                "reference": "08157bd1ffa3298807fdb0f83dd8b94095e86e43"
+                "reference": "088dab658b538c86c359e3062d7f940aaead35e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archict/brick/zipball/08157bd1ffa3298807fdb0f83dd8b94095e86e43",
-                "reference": "08157bd1ffa3298807fdb0f83dd8b94095e86e43",
+                "url": "https://api.github.com/repos/Archict/brick/zipball/088dab658b538c86c359e3062d7f940aaead35e9",
+                "reference": "088dab658b538c86c359e3062d7f940aaead35e9",
                 "shasum": ""
             },
             "require": {
@@ -42,9 +42,9 @@
             "description": "Base library for Archict framework",
             "support": {
                 "issues": "https://github.com/Archict/brick/issues",
-                "source": "https://github.com/Archict/brick/tree/v1.0.2"
+                "source": "https://github.com/Archict/brick/tree/v1.0.3"
             },
-            "time": "2024-12-07T10:09:59+00:00"
+            "time": "2024-12-30T08:32:46+00:00"
         },
         {
             "name": "archict/core",
@@ -97,16 +97,16 @@
         },
         {
             "name": "archict/router",
-            "version": "v1.0.3",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archict/router.git",
-                "reference": "bf664740ad5b6171ebc471d08462d062f2120a02"
+                "reference": "fd9f493eda032dac4e8056472d43a23e8876bd8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archict/router/zipball/bf664740ad5b6171ebc471d08462d062f2120a02",
-                "reference": "bf664740ad5b6171ebc471d08462d062f2120a02",
+                "url": "https://api.github.com/repos/Archict/router/zipball/fd9f493eda032dac4e8056472d43a23e8876bd8a",
+                "reference": "fd9f493eda032dac4e8056472d43a23e8876bd8a",
                 "shasum": ""
             },
             "require": {
@@ -138,9 +138,9 @@
             "description": "Simple HTTP router",
             "support": {
                 "issues": "https://github.com/Archict/router/issues",
-                "source": "https://github.com/Archict/router/tree/v1.0.3"
+                "source": "https://github.com/Archict/router/tree/v1.1.0"
             },
-            "time": "2024-12-07T10:40:53+00:00"
+            "time": "2024-12-30T08:46:19+00:00"
         },
         {
             "name": "azjezz/psl",
@@ -181,8 +181,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "hhvm/hsl",
-                    "url": "https://github.com/hhvm/hsl"
+                    "url": "https://github.com/hhvm/hsl",
+                    "name": "hhvm/hsl"
                 }
             },
             "autoload": {
@@ -316,13 +316,13 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "3.x-dev"
-                },
                 "phpstan": {
                     "includes": [
                         "extension.neon"
                     ]
+                },
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1038,12 +1038,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -1176,8 +1176,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1255,8 +1255,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1329,8 +1329,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
