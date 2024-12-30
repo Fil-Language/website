@@ -34,21 +34,15 @@ use Archict\Router\RouteCollectorEvent;
 use Fil\Website\Controller\DocumentationController;
 use Fil\Website\Controller\FDRController;
 use Fil\Website\Controller\HomeController;
-use Fil\Website\Services\Twig;
 
 #[Service]
 final readonly class Application
 {
-    public function __construct(
-        private Twig $twig,
-    ) {
-    }
-
     #[ListeningEvent]
     public function collectRoutes(RouteCollectorEvent $collector): void
     {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/doc', new DocumentationController($this->twig));
-        $collector->addRoute(Method::GET, '/FDR[/{title}]', new FDRController($this->twig));
+        $collector->addRoute(Method::GET, '', HomeController::class);
+        $collector->addRoute(Method::GET, '/doc', DocumentationController::class);
+        $collector->addRoute(Method::GET, '/FDR[/{title}]', FDRController::class);
     }
 }
