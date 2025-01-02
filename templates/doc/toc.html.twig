@@ -1,0 +1,10 @@
+{% for item in items %}
+    <li>
+        <a href="{{ base_uri }}{{ item.uri }}" {% if item.title == short_title %}class="current"{% endif %}>{{ item.title }}</a>
+        {% if item.sub_items %}
+            <ul>
+                {% include 'doc/toc.html.twig' with {'items': item.sub_items} %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

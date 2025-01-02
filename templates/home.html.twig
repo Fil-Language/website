@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% include('navbar.html.twig') %}
-
     <main class="content-container">
         <section class="content-wrapper title">
             <div class="content">
@@ -15,11 +13,12 @@
             <div class="content center">
                 <p><i class="iconoir-info-circle-solid"></i> Status</p>
                 <div class="badges">
-                    <img src="https://raw.githubusercontent.com/Fil-Language/filc/master/version.svg" alt="filc version">
+                    <a href="https://github.com/Fil-Language/filc/releases/latest">
+                        <img src="https://raw.githubusercontent.com/Fil-Language/filc/master/version.svg"
+                             alt="filc version">
+                    </a>
                 </div>
             </div>
         </section>
     </main>
-
-    {% include('footer.html.twig') %}
 {% endblock %}

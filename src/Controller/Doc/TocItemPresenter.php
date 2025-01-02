@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,20 +25,16 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Controller;
+namespace Fil\Website\Controller\Doc;
 
-use Archict\Router\RequestHandler;
-use Fil\Website\Services\Twig;
-use Psr\Http\Message\ServerRequestInterface;
-
-final readonly class DocumentationController implements RequestHandler
+final readonly class TocItemPresenter
 {
-    public function __construct(private Twig $twig)
-    {
-    }
-
-    public function handle(ServerRequestInterface $request): string
-    {
-        return $this->twig->render('documentation.html.twig');
-    }
+    /**
+     * @param list<TocItemPresenter> $sub_items
+     */
+    public function __construct(
+        public string $title,
+        public string $uri,
+        public array  $sub_items = [],
+    ) {}
 }

@@ -57,8 +57,8 @@ final readonly class Twig
         });
     }
 
-    public function render(string $template_name, array $context = []): string
+    public function render(string $template_name, array|object $context = []): string
     {
-        return $this->twig->render($template_name, $context);
+        return $this->twig->render($template_name, (array) $context);
     }
 }

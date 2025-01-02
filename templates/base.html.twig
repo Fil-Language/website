@@ -22,7 +22,31 @@
     {% block head %}{% endblock %}
 </head>
 <body>
+<header class="navbar">
+    <div class="navbar-container">
+        <div>
+            <a href="/"><img class="logo" src="{{ asset('img', 'fil.svg') }}" alt="Fil"></a>
+        </div>
+        <div>
+            <a href="/doc">Install</a>
+            <a href="/doc">Learn</a>
+            <a href="/ref">Reference</a>
+            <a href="/FDR">FDR</a>
+            <a href="https://github.com/Fil-Language"><i class="iconoir-github"></i></a>
+        </div>
+    </div>
+</header>
+
 {% block body %}{% endblock %}
+
+<footer>
+    <h3>Fil</h3>
+    <div>
+        <p>Made by <a href="https://ktraini.com">Kevin Traini</a> · All rights reserved</p>
+        <a href="https://github.com/Fil-Language"><i class="iconoir-github"></i></a>
+    </div>
+</footer>
+
 {% block script %}{% endblock %}
 </body>
 </html>

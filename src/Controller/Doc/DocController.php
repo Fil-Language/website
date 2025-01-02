@@ -1,3 +1,4 @@
+<?php
 /**
  * MIT License
  *
@@ -21,35 +22,38 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-.content-container {
-  width: 100%;
-  color: $font-color;
 
-  > .content-wrapper {
-    width: 100%;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+declare(strict_types=1);
 
-    > .content {
-      max-width: 800px;
-      width: fit-content;
+namespace Fil\Website\Controller\Doc;
 
-      &.center {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-      }
+use function Psl\Str\split;
+use function Psl\Str\trim;
+use function Psl\Str\trim_left;
+
+final readonly class DocController extends AbstractDocController
+{
+    protected function buildPresenter(string $content): DocPresenter
+    {
+        $lines = split($content, "\n");
+        if ($lines[0][0] === '#') {
+            $short_title = trim(trim_left($lines[0], '#'));
+            $title       = 'Documentation - ' . $short_title;
+        } else {
+            $short_title = '';
+            $title       = 'Documentation';
+        }
+
+        return new DocPresenter($title, $short_title, '/doc', [
+            // TODO: define the toc
+        ], $content);
     }
-  }
-}
 
-@media(max-width: 900px) {
-  .content {
-    padding: 0 1rem;
-  }
+    /**
+     * @psalm-pure
+     */
+    protected function toFilePath(string $path): string
+    {
+        return __DIR__ . "/../../../public/files/doc/$path.md";
+    }
 }

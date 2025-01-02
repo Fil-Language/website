@@ -31,8 +31,9 @@ use Archict\Brick\ListeningEvent;
 use Archict\Brick\Service;
 use Archict\Router\Method;
 use Archict\Router\RouteCollectorEvent;
-use Fil\Website\Controller\DocumentationController;
-use Fil\Website\Controller\FDRController;
+use Fil\Website\Controller\Doc\DocController;
+use Fil\Website\Controller\Doc\RefController;
+use Fil\Website\Controller\FDR\FDRController;
 use Fil\Website\Controller\HomeController;
 
 #[Service]
@@ -42,7 +43,8 @@ final readonly class Application
     public function collectRoutes(RouteCollectorEvent $collector): void
     {
         $collector->addRoute(Method::GET, '', HomeController::class);
-        $collector->addRoute(Method::GET, '/doc', DocumentationController::class);
+        $collector->addRoute(Method::GET, '/doc[/{path}]', DocController::class);
+        $collector->addRoute(Method::GET, '/ref[/{path}]', RefController::class);
         $collector->addRoute(Method::GET, '/FDR[/{title}]', FDRController::class);
     }
 }

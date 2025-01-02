@@ -1,7 +1,8 @@
+<?php
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,35 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-.content-container {
-  width: 100%;
-  color: $font-color;
 
-  > .content-wrapper {
-    width: 100%;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+declare(strict_types=1);
 
-    > .content {
-      max-width: 800px;
-      width: fit-content;
+namespace Fil\Website\Controller\Doc;
 
-      &.center {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-      }
-    }
-  }
-}
-
-@media(max-width: 900px) {
-  .content {
-    padding: 0 1rem;
-  }
+final readonly class DocPresenter
+{
+    /**
+     * @param list<TocItemPresenter> $menu
+     */
+    public function __construct(
+        public string $title,
+        public string $short_title,
+        public string $base_uri,
+        public array  $menu,
+        public string $content,
+    ) {}
 }

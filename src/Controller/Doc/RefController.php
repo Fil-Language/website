@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,18 +25,35 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Controller;
+namespace Fil\Website\Controller\Doc;
 
-final readonly class FDRPresenter
+use function Psl\Str\split;
+use function Psl\Str\trim;
+use function Psl\Str\trim_left;
+
+final readonly class RefController extends AbstractDocController
 {
-    private function __construct(
-        public string $name,
-        public string $link,
-    ) {
+    protected function buildPresenter(string $content): DocPresenter
+    {
+        $lines = split($content, "\n");
+        if ($lines[0][0] === '#') {
+            $short_title = trim(trim_left($lines[0], '#'));
+            $title       = 'References - ' . $short_title;
+        } else {
+            $short_title = '';
+            $title       = 'References';
+        }
+
+        return new DocPresenter($title, $short_title, '/ref', [
+            // TODO: define the toc
+        ], $content);
     }
 
-    public static function fromName(string $name): self
+    /**
+     * @psalm-pure
+     */
+    protected function toFilePath(string $path): string
     {
-        return new self($name, "/FDR/$name");
+        return __DIR__ . "/../../../public/files/ref/$path.md";
     }
 }

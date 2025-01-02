@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,35 +21,54 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-.content-container {
-  width: 100%;
-  color: $font-color;
+@import "doc-mixin";
 
-  > .content-wrapper {
-    width: 100%;
+.content-container.doc {
+  display: flex;
+  flex-direction: row;
+
+  > .toc {
+    width: 450px;
     padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
+    background-color: $background-secondary;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
-    > .content {
-      max-width: 800px;
-      width: fit-content;
+    > .toc-title {
+      text-align: center;
+      font-weight: bold;
+      margin: auto auto 1em;
+    }
 
-      &.center {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-left: 1em;
+      list-style: none;
+
+      li {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
+        gap: 7px;
+      }
+
+      a.current {
+        color: $font-color-active;
+        font-weight: bold;
+        text-decoration: underline;
       }
     }
-  }
-}
 
-@media(max-width: 900px) {
-  .content {
-    padding: 0 1rem;
+    > ul {
+      margin-left: 1.5em;
+    }
+  }
+
+  > .doc-content {
+    padding: 2em;
+    max-width: 800px;
+
+    @include doc-mixin;
   }
 }

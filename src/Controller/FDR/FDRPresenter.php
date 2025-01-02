@@ -1,3 +1,4 @@
+<?php
 /**
  * MIT License
  *
@@ -21,35 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-.content-container {
-  width: 100%;
-  color: $font-color;
 
-  > .content-wrapper {
-    width: 100%;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+declare(strict_types=1);
 
-    > .content {
-      max-width: 800px;
-      width: fit-content;
+namespace Fil\Website\Controller\FDR;
 
-      &.center {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-      }
+final readonly class FDRPresenter
+{
+    private function __construct(
+        public string $name,
+        public string $link,
+    ) {
     }
-  }
-}
 
-@media(max-width: 900px) {
-  .content {
-    padding: 0 1rem;
-  }
+    public static function fromName(string $name): self
+    {
+        return new self($name, "/FDR/$name");
+    }
 }

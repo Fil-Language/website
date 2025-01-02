@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Controller;
+namespace Fil\Website\Controller\Doc;
 
 use Archict\Router\Exception\HTTP\HTTPException;
 use Archict\Router\HTTPExceptionFactory;
@@ -36,51 +36,34 @@ use function Psl\File\read;
 use function Psl\Filesystem\exists;
 use function Psl\Filesystem\is_file;
 
-final readonly class FDRController implements RequestHandler
+abstract readonly class AbstractDocController implements RequestHandler
 {
-    public function __construct(private Twig $twig)
-    {
-    }
+    public function __construct(private Twig $twig) {}
 
     /**
      * @throws HTTPException
      */
-    public function handle(ServerRequestInterface $request): string
+    public final function handle(ServerRequestInterface $request): string
     {
-        $request_file = $request->getAttribute('title');
-        if ($request_file === null) {
-            return $this->twig->render('fdr-list.html.twig', [
-                'records' => [
-                    FDRPresenter::fromName('000 - Introduction to FDR'),
-                    FDRPresenter::fromName('001 - Fil'),
-                ],
-            ]);
+        $path = $request->getAttribute('path');
+        if ($path === null) {
+            $path = 'index';
         }
+        $file = $this->toFilePath(urldecode($path));
 
-        $file = $this->toFDRPath(urldecode($request_file));
         if (exists($file) && is_file($file)) {
             $content = read($file);
         } else {
             throw HTTPExceptionFactory::NotFound();
         }
 
-        return $this->twig->render('fdr.html.twig', [
-            'title'   => urldecode($request_file),
-            'content' => $content,
-            'file'    => $this->toFDRDownloadLink(urldecode($request_file)),
-        ]);
+        return $this->twig->render('doc/doc.html.twig', $this->buildPresenter($content));
     }
+
+    abstract protected function buildPresenter(string $content): DocPresenter;
 
     /**
      * @psalm-pure
      */
-    private function toFDRPath(string $request_file): string
-    {
-        return __DIR__ . "/../../public/fdr/$request_file.md";
-    }
-
-    private function toFDRDownloadLink(string $request_file): string
-    {
-        return "/fdr/$request_file.md";
-    }
+    abstract protected function toFilePath(string $path): string;
 }
