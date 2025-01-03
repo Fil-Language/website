@@ -46,7 +46,7 @@ abstract readonly class AbstractDocController implements RequestHandler
     public final function handle(ServerRequestInterface $request): string
     {
         $path = $request->getAttribute('path');
-        if ($path === null) {
+        if ($path === null || $path === '') {
             $path = 'index';
         }
         $file = $this->toFilePath(urldecode($path));
