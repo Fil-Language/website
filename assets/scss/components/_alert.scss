@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,38 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-@import "button";
-@import "card";
-@import "alert";
+
+.alert {
+  width: 100%;
+  padding: 20px;
+  border-left: 3px solid;
+  border-radius: 10px;
+
+  &.info {
+    $alert-info: #3fc0d4;
+    background-color: rgba($alert-info, 0.1);
+    border-color: $alert-info;
+    color: $alert-info;
+  }
+
+  &.success {
+    $alert-success: #28c4a0;
+    background-color: rgba($alert-success, 0.1);
+    border-color: $alert-success;
+    color: $alert-success;
+  }
+
+  &.warning {
+    $alert-warning: #f79514;
+    background-color: rgba($alert-warning, 0.1);
+    border-color: $alert-warning;
+    color: $alert-warning;
+  }
+
+  &.danger {
+    $alert-danger: #dc3c36;
+    background-color: rgba($alert-danger, 0.1);
+    border-color: $alert-danger;
+    color: $alert-danger;
+  }
+}
