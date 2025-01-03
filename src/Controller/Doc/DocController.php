@@ -45,7 +45,14 @@ final readonly class DocController extends AbstractDocController
         }
 
         return new DocPresenter($title, $short_title, '/doc', [
-            // TODO: define the toc
+            new TocItemPresenter('Introduction', '/introduction', [
+                new TocItemPresenter('What is fil?', '/introduction/what-is-fil'),
+                new TocItemPresenter('Installation', '/introduction/installation'),
+                new TocItemPresenter('Your first program', '/introduction/your-first-program'),
+            ]),
+            new TocItemPresenter('Concepts', '/concepts', [
+                new TocItemPresenter('Values', '/concepts/values'),
+            ]),
         ], $content);
     }
 
