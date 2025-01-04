@@ -28,32 +28,11 @@ declare(strict_types=1);
 namespace Fil\Website\Services;
 
 use LogicException;
-use Twig\Extension\ExtensionInterface;
-use Twig\TwigFilter;
+use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-final class TwigExtension implements ExtensionInterface
+final class TwigExtension extends AbstractExtension
 {
-    public function getTokenParsers(): array
-    {
-        return [];
-    }
-
-    public function getNodeVisitors(): array
-    {
-        return [];
-    }
-
-    public function getFilters(): array
-    {
-        return [];
-    }
-
-    public function getTests(): array
-    {
-        return [];
-    }
-
     public function getFunctions(): array
     {
         return [
@@ -66,10 +45,5 @@ final class TwigExtension implements ExtensionInterface
                 }
             ),
         ];
-    }
-
-    public function getOperators(): array
-    {
-        return [];
     }
 }
