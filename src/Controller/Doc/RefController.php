@@ -45,7 +45,7 @@ final readonly class RefController extends AbstractDocController
         }
 
         return new DocPresenter($title, $short_title, '/ref', [
-            // TODO: define the toc
+            new TocItemPresenter('filc', '/ref/filc'),
         ], $content);
     }
 
