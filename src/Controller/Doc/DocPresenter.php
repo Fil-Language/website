@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,25 +25,18 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Services;
+namespace Fil\Website\Controller\Doc;
 
-use LogicException;
-use Twig\Extension\AbstractExtension;
-use Twig\TwigFunction;
-
-final class TwigExtension extends AbstractExtension
+final readonly class DocPresenter
 {
-    public function getFunctions(): array
-    {
-        return [
-            new TwigFunction(
-                'asset',
-                static fn(string $type, string $name) => match ($type) {
-                    'css'          => "/css/$name.css",
-                    'img', 'image' => "/img/$name",
-                    default        => throw new LogicException("Found asset type $type, but this is not handled"),
-                }
-            ),
-        ];
-    }
+    /**
+     * @param list<TocItemPresenter> $menu
+     */
+    public function __construct(
+        public string $title,
+        public string $short_title,
+        public string $base_uri,
+        public array  $menu,
+        public string $content,
+    ) {}
 }

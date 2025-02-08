@@ -25,7 +25,7 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Controller;
+namespace Fil\Website\Controller\FDR;
 
 use Archict\Router\Exception\HTTP\HTTPException;
 use Archict\Router\HTTPExceptionFactory;
@@ -49,7 +49,7 @@ final readonly class FDRController implements RequestHandler
     {
         $request_file = $request->getAttribute('title');
         if ($request_file === null) {
-            return $this->twig->render('fdr-list.html.twig', [
+            return $this->twig->render('fdr/fdr-list.html.twig', [
                 'records' => [
                     FDRPresenter::fromName('000 - Introduction to FDR'),
                     FDRPresenter::fromName('001 - Fil'),
@@ -57,29 +57,32 @@ final readonly class FDRController implements RequestHandler
             ]);
         }
 
-        $file = $this->toFDRPath(urldecode($request_file));
+        $file = self::toFDRPath(urldecode($request_file));
         if (exists($file) && is_file($file)) {
             $content = read($file);
         } else {
             throw HTTPExceptionFactory::NotFound();
         }
 
-        return $this->twig->render('fdr.html.twig', [
+        return $this->twig->render('fdr/fdr.html.twig', [
             'title'   => urldecode($request_file),
             'content' => $content,
-            'file'    => $this->toFDRDownloadLink(urldecode($request_file)),
+            'file'    => self::toFDRDownloadLink(urldecode($request_file)),
         ]);
     }
 
     /**
      * @psalm-pure
      */
-    private function toFDRPath(string $request_file): string
+    private static function toFDRPath(string $request_file): string
     {
-        return __DIR__ . "/../../public/fdr/$request_file.md";
+        return __DIR__ . "/../../../public/files/fdr/$request_file.md";
     }
 
-    private function toFDRDownloadLink(string $request_file): string
+    /**
+     * @psalm-pure
+     */
+    private static function toFDRDownloadLink(string $request_file): string
     {
         return "/fdr/$request_file.md";
     }

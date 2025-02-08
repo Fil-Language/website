@@ -2,7 +2,7 @@
     "name": "@fil/website",
     "private": true,
     "scripts": {
-        "build": "sass assets/scss/main.scss public/css/main.css",
+        "build": "sass --no-source-map --style=compressed assets/scss/main.scss public/css/main.css",
         "watch": "sass --watch assets/scss/main.scss public/css/main.css"
     },
     "author": "Kevin Traini",

@@ -2,14 +2,18 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://fil.ktraini.com</loc>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://fil.ktraini.com/doc</loc>
-        <priority>0.5</priority>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://fil.ktraini.com/ref</loc>
+        <priority>0.3</priority>
     </url>
     <url>
         <loc>https://fil.ktraini.com/FDR</loc>
-        <priority>0.5</priority>
+        <priority>0.3</priority>
     </url>
 </urlset>

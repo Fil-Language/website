@@ -1,8 +1,7 @@
-<?php
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,22 +22,37 @@
  * SOFTWARE.
  */
 
-declare(strict_types=1);
+.alert {
+  width: 100%;
+  padding: 20px;
+  border-left: 3px solid;
+  border-radius: 10px;
 
-namespace Fil\Website\Controller;
+  &.info {
+    $alert-info: #3fc0d4;
+    background-color: rgba($alert-info, 0.1);
+    border-color: $alert-info;
+    color: $alert-info;
+  }
 
-use Archict\Router\RequestHandler;
-use Fil\Website\Services\Twig;
-use Psr\Http\Message\ServerRequestInterface;
+  &.success {
+    $alert-success: #28c4a0;
+    background-color: rgba($alert-success, 0.1);
+    border-color: $alert-success;
+    color: $alert-success;
+  }
 
-final readonly class DocumentationController implements RequestHandler
-{
-    public function __construct(private Twig $twig)
-    {
-    }
+  &.warning {
+    $alert-warning: #f79514;
+    background-color: rgba($alert-warning, 0.1);
+    border-color: $alert-warning;
+    color: $alert-warning;
+  }
 
-    public function handle(ServerRequestInterface $request): string
-    {
-        return $this->twig->render('documentation.html.twig');
-    }
+  &.danger {
+    $alert-danger: #dc3c36;
+    background-color: rgba($alert-danger, 0.1);
+    border-color: $alert-danger;
+    color: $alert-danger;
+  }
 }

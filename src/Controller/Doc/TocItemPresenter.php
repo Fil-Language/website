@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,18 +25,16 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Controller;
+namespace Fil\Website\Controller\Doc;
 
-final readonly class FDRPresenter
+final readonly class TocItemPresenter
 {
-    private function __construct(
-        public string $name,
-        public string $link,
-    ) {
-    }
-
-    public static function fromName(string $name): self
-    {
-        return new self($name, "/FDR/$name");
-    }
+    /**
+     * @param list<TocItemPresenter> $sub_items
+     */
+    public function __construct(
+        public string $title,
+        public string $uri,
+        public array  $sub_items = [],
+    ) {}
 }

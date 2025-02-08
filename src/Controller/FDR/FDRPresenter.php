@@ -25,25 +25,18 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Services;
+namespace Fil\Website\Controller\FDR;
 
-use LogicException;
-use Twig\Extension\AbstractExtension;
-use Twig\TwigFunction;
-
-final class TwigExtension extends AbstractExtension
+final readonly class FDRPresenter
 {
-    public function getFunctions(): array
+    private function __construct(
+        public string $name,
+        public string $link,
+    ) {
+    }
+
+    public static function fromName(string $name): self
     {
-        return [
-            new TwigFunction(
-                'asset',
-                static fn(string $type, string $name) => match ($type) {
-                    'css'          => "/css/$name.css",
-                    'img', 'image' => "/img/$name",
-                    default        => throw new LogicException("Found asset type $type, but this is not handled"),
-                }
-            ),
-        ];
+        return new self($name, "/FDR/$name");
     }
 }

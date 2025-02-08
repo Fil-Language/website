@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,25 +25,35 @@
 
 declare(strict_types=1);
 
-namespace Fil\Website\Services;
+namespace Fil\Website\Controller\Doc;
 
-use LogicException;
-use Twig\Extension\AbstractExtension;
-use Twig\TwigFunction;
+use function Psl\Str\split;
+use function Psl\Str\trim;
+use function Psl\Str\trim_left;
 
-final class TwigExtension extends AbstractExtension
+final readonly class RefController extends AbstractDocController
 {
-    public function getFunctions(): array
+    protected function buildPresenter(string $content): DocPresenter
     {
-        return [
-            new TwigFunction(
-                'asset',
-                static fn(string $type, string $name) => match ($type) {
-                    'css'          => "/css/$name.css",
-                    'img', 'image' => "/img/$name",
-                    default        => throw new LogicException("Found asset type $type, but this is not handled"),
-                }
-            ),
-        ];
+        $lines = split($content, "\n");
+        if ($lines[0][0] === '#') {
+            $short_title = trim(trim_left($lines[0], '#'));
+            $title       = 'References - ' . $short_title;
+        } else {
+            $short_title = '';
+            $title       = 'References';
+        }
+
+        return new DocPresenter($title, $short_title, '/ref', [
+            new TocItemPresenter('filc', '/ref/filc'),
+        ], $content);
+    }
+
+    /**
+     * @psalm-pure
+     */
+    protected function toFilePath(string $path): string
+    {
+        return __DIR__ . "/../../../public/files/ref/$path.md";
     }
 }
