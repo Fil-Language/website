@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,9 +21,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-@import "navbar";
-@import "content";
-@import "footer";
-@import "home";
-@import "fdr";
-@import "doc";
+
+@use "sass:color";
+@use "../abstracts/variables";
+
+.card-container {
+  display: flex;
+  align-items: stretch;
+  padding: 20px;
+  gap: 20px;
+
+  .card {
+    background-color: color.adjust(variables.$background-secondary, $lightness: -10%);
+    border: 1px solid variables.$font-color;
+    border-radius: 7px;
+    text-decoration: none !important;
+    width: 300px;
+
+    &:hover {
+      border-color: variables.$font-color-active;
+    }
+
+    > * {
+      padding: 10px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      font-weight: bold;
+
+      > i {
+        font-size: 2em;
+        padding-right: 10px;
+      }
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+  }
+}

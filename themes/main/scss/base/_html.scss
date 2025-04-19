@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2025-Present Kevin Traini
+ * Copyright (c) 2024-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,41 +22,30 @@
  * SOFTWARE.
  */
 
-.card-container {
-  display: flex;
-  align-items: stretch;
-  padding: 20px;
-  gap: 20px;
+@use "../abstracts/variables";
 
-  .card {
-    background-color: darken($background-secondary, 10%);
-    border: 1px solid $font-color;
-    border-radius: 7px;
-    text-decoration: none !important;
-    width: 300px;
+h1 {
+  font-size: 3rem;
+}
 
-    &:hover {
-      border-color: $font-color-active;
-    }
+h2 {
+  font-size: 2.5rem;
+}
 
-    > * {
-      padding: 10px;
-    }
+h3 {
+  font-size: 2rem;
+}
 
-    .card-header {
-      display: flex;
-      align-items: center;
-      font-size: 1.5em;
-      font-weight: bold;
+h4 {
+  font-size: 1.5rem;
+}
 
-      > i {
-        font-size: 2em;
-        padding-right: 10px;
-      }
-    }
+a {
+  color: variables.$font-color;
+  text-decoration: none;
+  transition: 150ms ease-in-out;
 
-    .card-content {
-      padding: 15px;
-    }
+  &:hover {
+    color: variables.$font-color-active;
   }
 }

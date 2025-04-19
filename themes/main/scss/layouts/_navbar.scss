@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * MIT License
  *
@@ -23,7 +22,55 @@
  * SOFTWARE.
  */
 
-@import "abstracts/_abstracts-dir";
-@import "base/_base-dir";
-@import "components/_components-dir";
-@import "layouts/_layouts-dir";
+@use "../abstracts/variables";
+
+.navbar {
+  position: sticky;
+  left: 0;
+  top: 0;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  background: rgba(variables.$background, 0.9);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+
+  .navbar-container {
+    max-width: 72rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  a {
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media(max-width: 900px) {
+  .navbar {
+    .navbar-container {
+      justify-content: left;
+    }
+
+    a:has(> .logo) {
+      display: none;
+    }
+  }
+}
+
+@media print {
+  .navbar {
+    display: none;
+  }
+}

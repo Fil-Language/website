@@ -2,12 +2,13 @@
     "name": "@fil/website",
     "private": true,
     "scripts": {
-        "build": "sass --no-source-map --style=compressed assets/scss/main.scss public/css/main.css",
-        "watch": "sass --watch assets/scss/main.scss public/css/main.css"
+        "build": "turbo run build",
+        "clean": "rm -rf public/css"
     },
     "author": "Kevin Traini",
     "license": "MIT",
     "devDependencies": {
-        "sass": "^1.77.6"
-    }
+        "turbo": "^2.5.0"
+    },
+    "packageManager": "pnpm@10.8.1"
 }

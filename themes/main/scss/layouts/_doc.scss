@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2024-Present Kevin Traini
+ * Copyright (c) 2025-Present Kevin Traini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,55 +21,56 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-footer {
-  width: 100%;
-  border-top: 1px solid rgb(30, 41, 59);
-  color: darken($font-color, 20%);
+
+@use "../abstracts/variables";
+@use "doc-mixin";
+
+.content-container.doc {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
 
-  h3, div {
-    max-width: 72rem;
-    width: 100%;
-    padding: 3rem;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-  }
-
-  div {
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  a {
-    font-size: 1.2rem;
-  }
-}
-
-@media(max-width: 900px) {
-  footer {
+  > .toc {
+    width: 450px;
+    padding: 1rem 0;
+    background-color: variables.$background-secondary;
+    justify-content: center;
     align-items: start;
 
-    h3, div {
-      margin: 0 1rem;
-      padding: 3rem 0;
-      width: auto;
+    > .toc-title {
+      text-align: center;
+      font-weight: bold;
+      margin: auto auto 1em;
     }
 
-    div {
+    ul {
+      display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 7px;
+      margin-left: 1em;
+      list-style: none;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      a.current {
+        color: variables.$font-color-active;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+
+    > ul {
+      margin-left: 1.5em;
     }
   }
-}
 
-@media print {
-  footer {
-    display: none;
+  > .doc-content {
+    padding: 2em;
+    max-width: 800px;
+
+    @include doc-mixin.doc-mixin;
   }
 }
