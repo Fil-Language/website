@@ -21,6 +21,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-@import "button";
-@import "card";
-@import "alert";
+
+@use "sass:color";
+@use "../abstracts/variables";
+
+.button {
+  background-color: variables.$background-secondary;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    background-color: color.adjust(variables.$background-secondary, $lightness: 10%);
+  }
+}

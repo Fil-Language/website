@@ -21,5 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-@import "fonts";
-@import "variables";
+@use "navbar";
+@use "content";
+@use "footer";
+@use "home";
+@use "fdr";
+@use "doc";
