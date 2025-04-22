@@ -3,6 +3,7 @@
     "private": true,
     "scripts": {
         "build": "turbo run build",
+        "typecheck": "turbo run typecheck",
         "clean": "rm -rf public/css"
     },
     "author": "Kevin Traini",
@@ -10,5 +11,5 @@
     "devDependencies": {
         "turbo": "^2.5.0"
     },
-    "packageManager": "pnpm@10.8.1"
+    "packageManager": "pnpm@10.9.0"
 }

@@ -4,7 +4,7 @@
 
 There is only 2 way for storing a value in fil, and they pretty look similar:
 
-```
+```fil
 // Variable
 var my_variable: i32 = 3
 // Constant
@@ -51,7 +51,7 @@ Arrays are static by default, their size are determined at compile time from the
 with the desired size (`int[5]`). The size can be inferred by the compiler if you associate declaration with definition,
 it's the easiest way:
 
-```
+```fil
 var my_array = [1, 2, 3] // Inferred to i32[3]
 ```
 
@@ -68,7 +68,7 @@ To declare a new pointer you use the `new` keyword, or get address of an existin
 
 They apply only on integers, floats and chars.
 
-```
+```fil
 // Addition
 1 + 2
 1++
@@ -85,7 +85,7 @@ They apply only on integers, floats and chars.
 
 **Boolean operators**
 
-```
+```fil
 // Logical AND
 true && false
 // Logical OR
@@ -96,7 +96,7 @@ true || true
 
 **Comparison operators**
 
-```
+```fil
 // Equality
 1 == 1
 // Inequality
@@ -114,7 +114,7 @@ true || true
 Arrays are basically just pointers, so you can do pointer arithmetics (at your own risk). Else you can use array access
 operator `[]`.
 
-```
+```fil
 val my_array = [1, 2, 3]
 my_array[0] // 1
 ```
@@ -129,7 +129,7 @@ unauthorized memory.
 
 All binary numeric and boolean operators can be used directly for assignation:
 
-```
+```fil
 var my_var = 2
 my_var += 3
 // my_var == 5

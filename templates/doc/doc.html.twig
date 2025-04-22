@@ -3,9 +3,7 @@
 {% block title %}| {{ title }}{% endblock %}
 
 {% block head %}
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    {{ asset('js', 'src/index.ts') }}
 {% endblock %}
 
 {% block body %}
@@ -24,6 +22,3 @@
     </main>
 {% endblock %}
 
-{% block script %}
-    <script type="application/javascript">hljs.highlightAll();</script>
-{% endblock %}
