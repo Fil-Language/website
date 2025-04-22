@@ -12,7 +12,7 @@ Fil code is written in `.fil` file.
 In this first program we'll write a little script which compute the result of operation `3 * 2 + 4` in a variable and
 then return the result as exit code.
 
-```
+```fil
 // main.fil
 val result = 3 * 2 + 4
 ```

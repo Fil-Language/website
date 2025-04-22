@@ -13,19 +13,18 @@
 
     <meta property="og:title" content="Fil">
     <meta property="og:description" content="Fil language official website">
-    <meta property="og:image" content="{{ asset('img', 'fil-opengraph.png') }}">
+    <meta property="og:image" content="{{ assetPath('img', 'fil-opengraph.png') }}">
 
-    <link rel="shortcut icon" href="{{ asset('img', 'fil.svg') }}"/>
-    <link rel="stylesheet" href="{{ asset('css', 'main') }}"/>
+    <link rel="shortcut icon" href="{{ assetPath('img', 'fil.svg') }}"/>
+    {{ asset('css', 'main') }}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
-    <script defer src="/script.js" data-website-id="84059d06-1261-44f6-a991-747989649947"></script>
     {% block head %}{% endblock %}
 </head>
 <body>
 <header class="navbar">
     <div class="navbar-container">
         <div>
-            <a href="/"><img class="logo" src="{{ asset('img', 'fil.svg') }}" alt="Fil"></a>
+            <a href="/"><img class="logo" src="{{ assetPath('img', 'fil.svg') }}" alt="Fil"></a>
         </div>
         <div>
             <a href="/doc/introduction/installation">Install</a>

@@ -2,9 +2,9 @@
 
 **Current state**
 
-|  Tool  |                                   Version                                   |
-|:------:|:---------------------------------------------------------------------------:|
-| `filc` | ![](https://raw.githubusercontent.com/Fil-Language/filc/master/version.svg) |
+|  Tool  |                                      Version                                       |
+|:------:|:----------------------------------------------------------------------------------:|
+| `filc` | ![](https://img.shields.io/github/v/release/fil-language/filc?include_prereleases) |
 
 ## `filc`
 

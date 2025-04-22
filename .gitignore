@@ -3,5 +3,6 @@
 vendor
 logs
 public/css
+public/js
 .turbo
 node_modules

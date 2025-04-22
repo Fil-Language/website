@@ -1,0 +1,21 @@
+{
+    "name": "@fil/prism-language-fil",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "watch": "vite build --watch --mode development --minify false",
+        "typecheck": "tsc --noEmit"
+    },
+    "author": "Kevin Traini",
+    "license": "MIT",
+    "dependencies": {
+        "prismjs": "^1.30.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.14.1",
+        "@types/prismjs": "^1.26.5",
+        "typescript": "^5.8.3",
+        "vite": "^6.3.2"
+    }
+}

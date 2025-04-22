@@ -30,20 +30,57 @@ namespace Fil\Website\Services;
 use LogicException;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use function Psl\Json\decode as psl_json_decode;
 
 final class TwigExtension extends AbstractExtension
 {
+    private const VITE_MANIFEST = __DIR__ . '/../../public/js/.vite/manifest.json';
+
     public function getFunctions(): array
     {
         return [
             new TwigFunction(
                 'asset',
                 static fn(string $type, string $name) => match ($type) {
-                    'css'          => "/css/$name.css",
+                    'css'   => "<link rel='stylesheet' href='/css/$name.css'/>",
+                    'js'    => self::getJSScript($name),
+                    default => throw new LogicException("Found asset type $type, but this is not handled"),
+                },
+                [
+                    'is_safe' => ['html'],
+                ]
+            ),
+            new TwigFunction(
+                'assetPath',
+                static fn(string $type, string $name) => match ($type) {
                     'img', 'image' => "/img/$name",
                     default        => throw new LogicException("Found asset type $type, but this is not handled"),
-                }
+                },
             ),
         ];
+    }
+
+    private static function getJSScript(string $name): string
+    {
+        $manifest_text = file_get_contents(self::VITE_MANIFEST);
+        if ($manifest_text === false) {
+            throw new LogicException('Vite manifest not found, assets are not build');
+        }
+
+        $manifest_json = psl_json_decode($manifest_text);
+        if (!isset($manifest_json[$name])) {
+            throw new LogicException("App '$name' not found");
+        }
+
+        $path = $manifest_json[$name]['file'];
+        $tag  = "<script type='application/javascript' src='/js/$path' defer></script>";
+
+        if (isset($manifest_json[$name]['css'])) {
+            foreach ($manifest_json[$name]['css'] as $css_asset) {
+                $tag .= "<link rel='stylesheet' href='/js/$css_asset' />";
+            }
+        }
+
+        return $tag;
     }
 }
