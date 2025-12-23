@@ -13,7 +13,7 @@
         "archict/router": "^1.1",
         "guzzlehttp/psr7": "^2.6",
         "twig/twig": "^3.10",
-        "azjezz/psl": "^3.0",
+        "azjezz/psl": "^4.0",
         "twig/markdown-extra": "^3.10",
         "erusev/parsedown": "^1.7"
     }
